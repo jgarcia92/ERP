@@ -1,0 +1,107 @@
+<html>
+<title>Manufacturer form</title>
+<body>
+<?php session_start();
+if($_SESSION['error']==1)
+{
+echo '<h2 align="center">Name Already Exists"</h2>';
+$_SESSION['error']=0;
+session_destroy();
+}
+?>
+<h2 align="center"> Manufacturer internal form</h2>
+<form action="manufact.php" method='POST'>
+<table align="center">
+<tr>
+<td>Name: </td><td><input type="text" name="Name" required="required" placeholder="name" title="Manufacturer name">
+</td>
+</tr>
+<tr>
+<td>Location: </td><td><input type="text" name="location" required="required" placeholder="location" title="Manufacturer location">
+</td>
+</tr><br>
+<tr>
+<td><input type="submit" value="save"></td>
+<td><input type="reset" value="clear"></td>
+</tr>
+</table>
+</form>
+<form action="manufact_edit.php" method='POST'>
+<table align="center">
+<tr>
+<td>
+Name: </td><td><select name="Name">
+<?php
+$m = new MongoClient();
+   // select a database
+   $db = $m->db_ess;
+   $collection = $db->ess_manufacturer;
+   $cursor=$collection->find();
+foreach($cursor as $document)
+{
+echo '<option value="'.$document['Name'].'">'.$document['Name'].'</option>';
+}
+?>
+</select>
+</td>
+</tr>
+<tr>
+<td>Changed location: </td><td><input type="text" name="location" required="required" placeholder="location" title="Manufacturer location">
+</td>
+</tr>
+<br>
+<tr>
+<td><input type="submit" value="save"></td>
+<td><input type="reset" value="clear"></td>
+</tr>
+</table>
+</form>
+<form action="manufact_delete.php" method='POST'>
+<table align="center">
+<tr>
+<td>
+Name: </td><td><select name="Name">
+<?php
+$m = new MongoClient();
+   // select a database
+   $db = $m->db_ess;
+   $collection = $db->ess_manufacturer;
+   $cursor=$collection->find();
+foreach($cursor as $document)
+{
+echo '<option value="'.$document['Name'].'">'.$document['Name'].'</option>';
+}
+?>
+</select>
+</td>
+</tr>
+<br>
+<tr>
+<td><input type="submit" value="Delete"></td>
+<td><input type="reset" value="clear"></td>
+</tr>
+</table>
+</form>
+<!--<form action="update.php" method='POST'>
+<table align="center">
+<tr>
+<td>Name: </td><td><input type="text" name="Name" required="required" placeholder="name" title="Manufacturer name">
+</td>
+</tr>
+<tr>
+<td>Location: </td><td><input type="text" name="location" required="required" placeholder="location" title="Manufacturer location">
+</td>
+</tr><br>
+<tr>
+<td><input type="submit" value="update"></td>
+<td><input type="reset" value="clear"></td>
+</tr>
+</table>
+</form>-->
+</body>
+</html>
+
+
+
+
+

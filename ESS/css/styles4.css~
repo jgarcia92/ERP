@@ -1,0 +1,166 @@
+body										{margin:0; padding:0;background:#005081; font-family:"Trebuchet MS", Arial, Helvetica, sans-serif}
+html{margin:0;padding:0}
+*											{margin:0; padding:0}
+#map-canvas {
+float:right;
+        height: 400px;
+		width:500px;
+        margin: 0px;
+        padding: 0px
+      }
+#heading{padding-top:10px;float:center;margin:0 0 0 340px;position:absolute;color: burlywood;top:100px;font-size: larger;}
+a											{color:#8d8d85;outline:0;padding:10px; text-decoration:none}
+img											{border:0}
+h1,h2,h3,h4,h5,h6							{font-weight:normal}
+li											{list-style:none}
+#content_sup table
+{color:aliceblue;cellspacing:10;font-size:18}
+#head										{width:100%; height:250px;float:left; overflow:hidden; background: url("../images/back4.jpg");background-repeat: no-repeat;background-size: 100% 100%;opacity:0.8}
+#head_cen									{width:1000px; margin:0 auto}
+#head_sup									{width:800px; float:left; position:relative}
+
+#content									{width:100%; padding-bottom:36px; float:left; margin:auto; margin-left:auto; margin-right:auto;background:#005081; margin-top:0px;}
+#content_cen								{width:1000px; margin:0px auto; margin-left:auto; margin-right:auto}
+#content_sup								{width:100%; float:left; margin:auto;margin-left:auto; margin-right:auto; overflow:hidden; position:relative}
+#content_sup h1{float:center;text-align:center;color:aliceblue;}
+
+#left{float:left;position:absolute;width:500px;}
+#right{float:right;width:500px;}
+#left a{float:left;}
+#right a{float:right;}
+#left img{float:left; padding:0;height:300px;width:400px;}
+#right img{float:right; padding:0;height:300px;width:400px;}
+
+#foot										{width:100%; height:150px; float:left; overflow:hidden; background: rgba(0,5,10,.8);}
+#foot_cen									{width:450px; margin:28px auto 0 auto}
+#foot p										{width:100%; margin-top:10px; float:left; font-family:"Trebuchet MS", Arial, Helvetica, sans-serif; font-size:14px; color:#7FA3A2; line-height:18px; text-align:center}
+#foot p	a									{color:inherit}
+
+#logo
+{
+padding-top:10px;
+position:absolute;
+margin:0px;
+float:left;
+}
+
+.image { 
+   position: relative; 
+   width: 100%; /* for IE 6 */
+}
+.image h2 { 
+   position: absolute; 
+   top: 200px; 
+   left: 0; 
+  width: auto; 
+}
+.image h2 span {
+margin:10px;
+   color: white; 
+   font: bold 24px/45px Helvetica, Sans-Serif; 
+   letter-spacing: -1px;  
+   background: rgb(0, 0, 0); /* fallback color */
+   background: rgba(0, 0, 0, 0.7);
+   padding: 5; 
+}
+.image2 { 
+   position: relative; 
+   width: 100%; /* for IE 6 */
+}
+.image2 h2 { 
+   position: absolute; 
+   top: 500px; 
+   left: 0; 
+   width: auto; 
+}
+.image2 h2 span {
+margin:10px;
+   color: white; 
+   font: bold 24px/45px Helvetica, Sans-Serif; 
+   letter-spacing: -1px;  
+   background: rgb(0, 0, 0); /* fallback color */
+   background: rgba(0, 0, 0, 0.7);
+   padding: 5; 
+}
+.image3 { 
+   position: relative; 
+   width: 100%; /* for IE 6 */
+}
+.image3 h2 { 
+   position: absolute; 
+   top: 800px; 
+   left: 0; 
+   width: auto; 
+}
+.image3 h2 span {
+margin:10px;
+   color: white; 
+   font: bold 24px/45px Helvetica, Sans-Serif; 
+   letter-spacing: -1px;  
+   background: rgb(0, 0, 0); /* fallback color */
+   background: rgba(0, 0, 0, 0.7);
+   padding: 5; 
+}
+.image4 { 
+   position: relative; 
+   width: 100%; /* for IE 6 */
+}
+.image4 h2 { 
+   position: absolute; 
+   top: 200px; 
+   right:0px;
+  width: auto; 
+}
+.image4 h2 span {
+margin:10px;
+   color: white; 
+   font: bold 24px/45px Helvetica, Sans-Serif; 
+   letter-spacing: -1px;  
+   background: rgb(0, 0, 0); /* fallback color */
+   background: rgba(0, 0, 0, 0.7);
+   padding: 5; 
+}
+.image5 { 
+   position: relative; 
+   width: 100%; /* for IE 6 */
+}
+.image5 h2 { 
+   position: absolute; 
+   top: 500px; 
+   right:0px;
+   width: auto; 
+}
+.image5 h2 span {
+margin:10px;
+   color: white; 
+   font: bold 24px/45px Helvetica, Sans-Serif; 
+   letter-spacing: -1px;  
+   background: rgb(0, 0, 0); /* fallback color */
+   background: rgba(0, 0, 0, 0.7);
+   padding: 5; 
+}
+.image6 { 
+   position: relative; 
+   width: 100%; /* for IE 6 */
+}
+.image6 h2 { 
+   position: absolute; 
+   top: 800px; 
+  right:0px;
+   width: auto; 
+}
+.image6 h2 span {
+margin:10px;
+   color: white; 
+   font: bold 24px/45px Helvetica, Sans-Serif; 
+   letter-spacing: -1px;  
+   background: rgb(0, 0, 0); /* fallback color */
+   background: rgba(0, 0, 0, 0.7);
+   padding: 10px; 
+}
+#navigation{float:left;text-align:left; margin-top:50px;}
+
+#navigation ul li{padding:10px}
+
+#display{float:left;text-align:left; margin-top:50px; width:700px;height:500px;}
+#display iframe{float:left;text-align:left;width:800px;height:500px;border:0}

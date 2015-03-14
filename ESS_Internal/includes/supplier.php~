@@ -1,0 +1,65 @@
+<html>
+<head>
+<title>
+Supplier Form</title>
+</head>
+<body>
+<h2 align="center">Internal Supplier Form</h2>
+<form action="includes/suppinsert.php" method="post">
+<table align="center">
+<br>
+<tr>
+<td>Supplier Name</td>
+<td><input type="text" name="supp_name" required="required" Name="name" title="supplier name"></td>
+</tr>
+<tr>
+<td>Supplier Type</td>
+<td><select name="Type">
+<option value="Drop Ship">DropShip</option>
+<option value="Back to Back">BacktoBack</option>
+</td>
+</tr>
+<tr>
+<td> Address Line 1: </td><td><input type="text" name="add1" required="required" >
+</td>
+</tr>
+<tr>
+<td>Line 2: </td><td><input type="text" name="add2" required="required"></td>
+</tr>
+<tr>
+<td>Line 3:</td><td><input type="text" name="add3" required="required" ></td>
+</tr>
+<tr>
+<td>Landmark: </td><td><input type="text" name="add4" >
+</tr>
+<tr>
+<td>
+City: </td><td><input type="text" required="required" name="city" >
+</td>
+</tr>
+<br>
+<tr>
+<td>Pincode: </td><td><input type="number" name="pin" >
+</td>
+</tr>
+<tr>
+<td>State: </td><td><input type="text" name="state" required="required" ></td></tr>
+<tr>
+<td>
+Primary Contact: </td><td><input type="text" required="required" name="contact1" >	
+</td>
+</tr>
+
+<tr>
+<td>
+Secondary Contact: </td><td><input type="text" required="required" name="contact2" >	
+</td>
+</tr>
+<tr>
+<td><input type="submit" value="save"></td>
+<td><input type="reset"></td>
+</tr>
+</table>
+</form>
+</body>
+</html>

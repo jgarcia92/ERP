@@ -1,0 +1,20 @@
+<?php
+$manufacturer_name=$_POST['Name'];
+$location=$_POST['location'];
+//connect to mongodb
+$m = new MongoClient();
+//select a database
+$db = $m->db_ess;
+$collection = $db->ess_manufacturer;
+$cursor= $collection->find(array('Name' =>$manufacturer_name));
+if($cursor->count()>0)
+{
+echo
+"name already exist";
+exit();
+}
+else{
+$document = array("Name"=>$manufacturer_name,"location"=>$location);
+$collection->insert($document);
+}
+?>

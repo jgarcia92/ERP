@@ -1,0 +1,27 @@
+<?php
+session_start();
+$m=new MongoClient();
+$db=$m->db_ess;
+$collection=$db->ess_custtrans_info;
+$collectionx=$db->ess_item_info;
+$cursor=$collection->find(array("customer_id"=>new MongoId($_SESSION['id']),"status"=>"Pending"));
+if($cursor->count()==0)
+{
+echo 'All the products are on the way, keep your cash ready';
+}
+else
+{
+foreach($cursor as $document)
+{
+echo "<h2 align='center'>The following product is still in warehouse<br></h2>";
+$cursorx=$collectionx->find(array("_id"=>new MongoId($document['item_id'])));
+foreach($cursorx as $documentx)
+{
+echo "Model: ".$documentx['model'].'<br>';
+echo "Brand: ".$documentx['brand'].'<br>';
+echo "Category: ".$documentx['cat'].'<br>';
+}
+echo "Order Date: ".$document['order_date'];
+echo"<a href='../profile.php'>Go Back</a>";
+}
+}

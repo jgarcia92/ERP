@@ -1,0 +1,74 @@
+<?php
+SESSION_START();
+if(!isset($_SESSION['user']))
+{
+header("location:login.php");
+}
+?>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="css/transaction_styles.css">
+<script src="scripts/window.js"></script>
+<?php include('includes/header.php')?>
+<?php
+if(isset($_SESSION['user']))
+{?>
+<form id="form2" action="logout.php">
+<input type="submit" value="Logout"/>
+</form>
+<form id="form1" action="profile.php">
+<input type="submit" value="Profile"/>
+</form>
+<?php
+}
+else
+{?>
+<form name="form2" id="form2" method="post" onsubmit="openWindow(500, 500,'signup.html');">
+<input type="submit" value="Sign Up"/>
+</input>
+</form>
+<form id="form1" action="login.php">
+<input type="submit" value="Login">
+</input>
+</form>
+<?php
+}?>
+<?php include('includes/navigation.php')?>
+<div id="content">
+<div id="content_cen">
+<div id="content_sup">
+<div id="left">
+<form action="transaction_edit.php" method="POST">
+<h1>Transaction Page</h1>
+<br>
+<?php include('includes/cust_det.php');?>
+
+<br>
+<br>
+<h1>Bill Amount &#8377<?php $price=$_GET['price'];
+$discount=$_GET['discount'];
+$final_price=$price-$discount*$price/100; 
+echo $final_price;
+$_SESSION['price']=$final_price;
+?></h1>
+<?php 
+$m=new MongoClient();
+$db=$m->db_ess;
+$collection=$db->ess_item_info;
+$cursor=$collection->find(array('model'=>$_GET['model'],'brand'=>$_GET['brand']));
+session_start();
+foreach($cursor as $document)
+{
+$_SESSION['ids']=$document['_id'];
+break;
+}
+?>
+<br>
+<br><input type="submit" value="Add To Cart">       </div>
+</form>
+</div>
+</div>
+</div>
+<?php include('includes/footer.php');?>
+</body>
+</html>

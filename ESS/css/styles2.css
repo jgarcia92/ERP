@@ -1,0 +1,9 @@
+h1,h2,p,td
+{
+color:red;
+}
+html { 
+  background: url(../images/background2.jpg) no-repeat center center fixed; 
+  background-size: cover;
+}
+table{background:url(../images/background.jpg) no-repeat center center fixed; }

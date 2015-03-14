@@ -1,0 +1,14 @@
+<?php
+$category_name=$_POST['Name'];
+
+   // connect to mongodb
+   $m = new MongoClient();
+   // select a database
+   $db = $m->db_ess;
+   $collection = $db->ess_manufacturer;
+$cursor = $collection->find(array('Name' => $category_name));
+foreach($cursor as $document)
+{$collection->remove(array("_id"=>$document['_id']));
+}
+header("location:category.php");
+?>

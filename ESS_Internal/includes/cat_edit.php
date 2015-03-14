@@ -1,0 +1,19 @@
+<?php
+$category_name=$_POST['cat'];
+$category_new=$_POST['cat_new'];
+echo $category_new;
+echo $category_name;
+
+   $m = new MongoClient();
+   // select a database
+   $db = $m->db_ess;
+   $collection = $db->ess_category;
+echo"Succeed";
+$cursor=$collection->find(array('category_name'=>$category_name));
+echo $cursor->count();
+foreach($cursor as $document)
+{
+$collection->update(array("_id"=>new MongoId($document['_id'])), array('$set'=>array("category_name"=>$category_new)));
+}
+header("location:category.php");
+?>

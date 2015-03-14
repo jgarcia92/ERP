@@ -1,0 +1,38 @@
+<?php
+$purchase_order_num=$_POST['purchase_order_num'];
+$supplier_id=$_POST['supplier_id'];
+$ship_address=$_POST['ship_address'];
+$bill_add=$_POST['bill_add'];
+$receiving_add=$_POST['receiving_add'];
+$receiving_date=$_POST['receiving_date'];
+$order_status=$_POST['order_status'];
+$price_list_id=$_POST['price_list_id'];
+$quantity=$_POST['quantity'];
+$usp=$_POST['usp'];
+$serial_number=$_POST['serial_number'];
+$receiving_date=$_POST['receiving_date2'];
+$click=$_POST['click'];
+   // connect to mongodb
+   $m = new MongoClient();
+   // select a database
+   $db = $m->db_ess;
+   $collection = $db->ess_supplier_transaction;
+$document = array( 
+      "purchase_order_num"=>$purchase_order_num,
+      "supplier_id" => $supplier_id, 
+      "ship_address"=>$ship_address,
+      "bill_add"=>$bill_add,
+      "receiving_add"=>$receiving_add,
+      "receiving_date"=>$receiving_date,
+      "order_status"=>$order_status,
+	"price_list_id"=>$price_list_id,
+	"quantity"=>$quantity,
+        "usp"=>$usp,
+        "serial_number"=>$serial_number,
+     "receiving_date2"=>$receiving_date,
+     "click"=>$click
+
+);
+   $collection->insert($document);
+echo"Success";
+?>

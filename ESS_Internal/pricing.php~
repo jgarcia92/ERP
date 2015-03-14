@@ -1,0 +1,86 @@
+<?php
+session_start();
+if(!isset($_SESSION['user1']))
+{
+header("location:index.php");
+}
+?>
+<html>
+<title>Pricing</title>
+<body>
+<h2 align="center">WAREHOUSE MANAGER INTERNAL FORM</h2>
+<form action='includes/pricinginsert.php' method='post'>
+<table align="center">
+<br>
+<br>
+<td>Price List Name: </td><td><input type="Text" name="plist" required="required" placeholder="Price List" title="Price List">
+</td>
+</tr>
+<tr>
+<td>Effective From Date: </td><td><input type="date" name="efdate" required="required" placeholder="Effective From Date" title="Provide Effective From Date">
+</td>
+</tr>
+<tr>
+<td>Effective To Date: </td><td><input type="date" name="etdate" required="required" placeholder="Effective From Date" title="Provide Effective From Date"></td>
+<br>
+<tr>
+<td>Brand: </td><td><input type="text" name="brand"  placeholder="Text" title="Provide Brand Name"></td>
+</tr>
+</table>
+<hr>
+<hr>
+<table border='2'>
+<tr>
+<th>Category</th>
+<th>Model Number</th>
+<th>Unit Of Measurement</th>
+<th>Price</th>
+<th>Discount</th>
+<th>Effective From Date</th>
+<th>Effective To Date</th>
+<th>Hot Buy Flag</th>
+</tr>
+<tr>
+<td> <select name="catname">
+<?php 
+// connect to mongodb
+   $m = new MongoClient();
+   // select a database\
+   $db = $m->db_ess;
+   $collection = $db->ess_category;
+   $cursor=$collection->find();
+   foreach($cursor as $document)
+{
+echo'<option value="'.$document["category_name"].'">'. $document["category_name"].'</option>';
+}  
+?>
+</td>
+<td> <select name="model_num">
+<?php 
+// connect to mongodb
+   $m = new MongoClient();
+   // select a database\
+   $db = $m->db_ess;
+   $collection = $db->ess_item_info;
+   $cursor=$collection->find();
+   foreach($cursor as $document)
+{
+echo'<option value="'.$document["model"].'">'. $document["model"].'</option>';
+}  
+?>
+</td>
+<td><input type="text" name="UOM" value="each"></td>
+<td><input type="text" name="price" required="required" placeholder="Price" title="Enter the price in Rupees"></td>
+<td><input type="text" name="discount" required="required" placeholder="Discount" title="Provide Discount in %"></td>
+<td><input type="date" name="efdatet" required="required" placeholder="Effective From Date" title="Provide Effective From Date"></td>
+<td><input type="date" name="etdatet" required="required" placeholder="Effective To Date" title="Provide Effective To Date"></td>
+<td><input type="radio" name="hbf" value="Yes">Yes
+<input type="radio" name="hbf" value="No">No</td>
+</tr>
+</table>
+<td><br><!--<input type="submit"></td><td><input type="reset"></td><td><input type='button' value='update' onclick="window.location.href='updatepricing.php'"></td>-->
+</tr>
+
+</form>
+</body>
+</html>

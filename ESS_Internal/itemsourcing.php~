@@ -1,0 +1,75 @@
+<?php
+session_start();
+if(!isset($_SESSION['id']))
+{
+header("location:index.php");
+}
+?>
+<html>
+<head>
+<title>
+Sourcing Form</title>
+</head>
+<body>
+<h2 align="center">Item sourcing form</h2>
+<form action="includes/itemsourcinginsert.php" method="post">
+<table align="center">
+<br>
+<tr>
+<th>Item Id</th>
+<th>Organisation Id</th>
+<th>Supplier Id</th>
+<th>lead Time</th>
+
+</tr>
+<tr>
+<td><select name="item_id">
+<?php 
+// connect to mongodb
+   $m = new MongoClient();
+   // select a database\
+   $db = $m->db_ess;
+   $collection = $db->ess_item_info;
+   $cursor=$collection->find();
+   foreach($cursor as $document)
+{
+echo'<option value="'.$document["_id"].'">'. $document["_id"].'</option>';
+}  
+?>
+</td>
+<td><select name="org_id">
+<?php 
+// connect to mongodb
+   $m = new MongoClient();
+   // select a database\
+   $db = $m->db_ess;
+   $collection = $db->ess_organization;
+   $cursor=$collection->find();
+   foreach($cursor as $document)
+{
+echo'<option value="'.$document["_id"].'">'. $document["_id"].'</option>';
+}  
+?>
+<td><select name="supplier_id">
+<?php 
+// connect to mongodb
+   $m = new MongoClient();
+   // select a database\
+   $db = $m->db_ess;
+   $collection = $db->ess_supplier_info;
+   $cursor=$collection->find();
+   foreach($cursor as $document)
+{
+echo'<option value="'.$document["_id"].'">'. $document["_id"].'</option>';
+}  
+?>
+<td><input type="text" name="leadtime" required="required" Name="name" title="leadtime"></td>
+<td><input type="submit" value="Save"></td>
+<td><input type="reset" value="clear"></td>
+</tr>
+</table>
+</form>
+</body>
+</html>
+
+

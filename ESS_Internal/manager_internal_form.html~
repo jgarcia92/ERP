@@ -1,0 +1,12 @@
+<html>
+<title>MANAGER INTERNAL FORM</title>
+<body>
+<h2 align="center">MANAGER INTERNAL FORM</h2>
+  <table align=center>
+    <tr>
+    <td><input type="button" value="Recruit" onclick="window.location.href='manager_internalform_1.html'"> </td>
+    <td><input type="button" value="Fire" onclick="window.location.href=''"> </td>
+    </tr>
+  <table>
+</body>
+</html>

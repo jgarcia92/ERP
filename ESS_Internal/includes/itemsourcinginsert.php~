@@ -1,0 +1,21 @@
+<?php
+$item_id=$_POST['item_id'];
+$org_id=$_POST['org_id'];
+$supplier_id=$_POST['supplier_id'];
+$leadtime=$_POST['leadtime'];
+
+   // connect to mongodb
+   $m = new MongoClient();
+   // select a database
+   $db = $m->db_ess;
+   $collection = $db->ess_sourcing;
+echo"Done";
+$document = array( 
+      "item_id"=>$item_id,
+      "org_id" => $org_id, 
+      "supplier_id"=>$supplier_id,
+      "leadtime"=>$leadtime,
+      );
+   $collection->insert($document);
+echo"Done";
+?>

@@ -1,0 +1,91 @@
+body										{margin:0; background:white; font-family:"Trebuchet MS", Arial, Helvetica, sans-serif}
+*											{margin:0; padding:0}
+#heading{padding-top:10px;float:center;margin:0 0 0 340px;position:absolute;}
+#form2{float:right; padding-left:10px}
+#form1{float:right;}
+
+#form2 button{background:black;}
+
+a											{outline:0;padding:10px; text-decoration:none}
+img											{border:0}
+h1,h2,h3,h4,h5,h6							{font-weight:normal}
+li											{list-style:none}
+#marqueecontainer{
+position: relative;
+width: 200px; /*marquee width */
+height: 200px; /*marquee height */
+background-color: white;
+margin:auto;
+float:right;
+overflow: hidden;
+border: 3px solid #31a1ff;
+padding: 2px;
+padding-left: 4px;
+}
+
+#head										{width:100%; height:160px;float:left; overflow:hidden; background:#005081}
+.head_height								{height:550px}
+.head_pad									{padding-bottom:30px}
+#head_cen									{width:1000px; margin:0 auto}
+#head_sup									{width:800px; float:left; position:relative}
+#head ul									{text-align:center;background:black;position:absolute;width:100%; height:60px; margin-top:100px; float:center}
+#head ul li									{padding-left:40px;width:auto; float:center;display:inline;text-align:center; font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#5f5f5f; line-height:5; text-transform:uppercase}
+#head ul li:first-child						{margin:0}
+#head ul li	a,#head ul li a.active			{width:auto; height:42px; padding:0; float:center; color:inherit; background:black}
+#head ul li ul{margin:-20;display:none}
+#head ul li a:hover{}
+#head ul li ul a:hover{margin:-20}
+
+#head ul li ul li{display:inline}
+#cu3er-container							{width:800px; height:360px; float:left; outline:0; position:absolute; top:166px; left:0px; z-index:10}
+img.ban_bg									{width:100%; float:left; position:absolute; top:166px; left:0px}
+
+#content									{width:100%; padding-bottom:36px; float:left; margin:auto; margin-left:auto; margin-right:auto;background:#ffffff url(../images/contentBg.png); margin-top:0px;}
+#content_cen								{width:1200px; margin:0px auto; margin-left:auto; margin-right:auto}
+#content_sup								{width:100%; float:left; margin:auto;margin-left:auto; margin-right:auto; overflow:hidden; position:relative}
+#foot										{width:100%; height:163px; float:left; overflow:hidden; background:#005081}
+#foot_cen									{width:800px; margin:28px auto 0 auto}
+#foot h6									{width:200px; height:50px; margin:0 auto; text-indent:-9999px; background:url(../images/logo.png) no-repeat}
+#foot h6 a									{width:100%; height:100%; float:left}
+#foot ul									{width:440px; margin:11px auto 0 auto}
+#foot ul li									{width:auto; float:left; font-family:"Trebuchet MS", Arial, Helvetica, sans-serif; font-size:14px; color:#767676; line-height:18px}
+#foot ul li a								{width:auto; float:left; color:inherit}
+#foot ul li.space							{width:auto; float:left; padding:0 6px}
+#foot p										{width:100%; margin-top:10px; margin-left:-45px;float:left; font-family:"Trebuchet MS", Arial, Helvetica, sans-serif; font-size:14px; color:#767676; line-height:18px; text-align:center}
+#foot p	a									{color:inherit}
+
+*											{margin:0; padding:0}
+
+#header
+{
+position:absolute;
+background:blue;
+width:100%;
+height:80px;
+}
+
+#logo
+{
+padding-top:10px;
+position:absolute;
+margin:0px;
+float:left;
+}
+#login
+{
+margin:0px 25px;
+float:right;
+padding-top:10px;
+}
+#login a
+{
+color:black;
+text-decoration:none;
+margin:10px 25px;
+float:right;
+}
+
+
+#left{height:500px;width:700px;float:left;margin-top:40px;background:black;}
+#right{margin-top:-980px;width:500px;height:980px;float:right;background:maroon;}
+#left2{margin-top:500px;width:700px;height:500px;position:relative;background:maroon;}

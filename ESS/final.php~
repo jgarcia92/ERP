@@ -1,0 +1,83 @@
+<?php
+SESSION_START();
+?>
+<html>
+<head>
+<title> ESS, The Electronic Smart Store</title>
+<link rel="stylesheet" type="text/css" href="css/finalize_styles.css">
+</head>
+<body>
+<div id="head">
+<div id="head_cen">
+<div id="logo"><a href="index.php">LOGO ESS</a>
+</div>
+<div id="heading"><p>The Electronic Smart Store- "Think Smart Buy Smart"</p>
+</div><div id="login">
+<script>
+function openWindow(h, w, url) {
+  leftOffset = (screen.width/2) - w/2;
+  topOffset = (screen.height/2) - h/2;
+  window.open(url, this.target, 'left=' + leftOffset + ',top=' + topOffset + ',width=' + w + ',height=' + h + ',resizable,scrollbars=yes');
+
+}
+</script>
+<?php
+if(isset($_SESSION['user']))
+{?>
+<form id="form2" action="logout.php">
+<input type="submit" value="Logout"/>
+</form>
+<form id="form1" action="profile.php">
+<input type="submit" value="Profile"/>
+</form>
+<?php
+}
+else
+{?>
+<form name="form2" id="form2" method="post" onsubmit="openWindow(500, 500,'signup.html');">
+<input type="submit" value="Sign Up"/>
+</input>
+</form>
+<form id="form1" action="login.php">
+<input type="submit" value="Login">
+</input>
+</form>
+<?php
+}?>
+</div>
+</div>
+
+<ul><!--Associate every product with a unique id-->
+<li><a href="products.php">Television</a>
+</li><!--Link to php page with id displaying different products for different id-->
+
+<li><a href="products.php">Laptop</a></li>
+<li><a href="products.php">Tablet</a></li>
+<li><a href="products.php">Mobile</a></li>
+<li><a href="products.php">Camera</a></li>
+<li><a href="products.php">Audio & Video</a></li>
+<li><a href="products.php">Gaming Consoles</a></li>
+<li><a href="products.php">Mobile Accessories</a></li>
+<li><a href="products.php">Laptop Accessories</a></li>
+<li><a href="products.php">Softwares</a></li>
+<li><a href="products.php">Softwares</a></li>
+</ul>
+</div>
+<div id="content">
+<div id="content_cen">
+<div id="content_sup">
+<div id="left">
+<p>List of products selected by the customer</p>
+<br>
+</p>If he wants to cancel the order, he can do so before shipping starts</p>
+<br>
+<p>Tracking of the product can be done here</p>
+<br>
+<p>Provide  a link of this page to the customer when he logs in</p>
+</div>
+</div>
+</div>
+</div>
+<?php include('includes/footer.php');?>
+</body>
+</html>

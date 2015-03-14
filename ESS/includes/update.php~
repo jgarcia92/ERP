@@ -1,0 +1,53 @@
+<?php
+session_start();
+$m = new MongoClient();
+  // echo "Connection to database successfully";
+   // select a database
+   $db = $m->db_ess;
+   //echo "Database mydb selected";
+   $collection = $db->ess_customer_info;
+   //echo "Collection selected succsessfully";
+   $check=$_SESSION['id'];   
+   $cursor = $collection->find(array("_id"=>$check),array("Username"=>1,"Mobilenumber"=>1,"Firstname"=>1,"Lastname"=>1,"E-mail"=>1,"Password"=>1,"Title"=>1));
+   // iterate cursor to display title of documents
+/*echo"E-mail:";
+   echo $document['E-mail'];
+echo"<br>";   
+echo"Name:";
+echo $document['Title'];
+echo $document['Firstname'];
+echo" ";
+   echo $document['Lastname'];
+echo"<br>";
+echo"Username:"   ;
+echo $document['Username'];
+echo"<br>";   
+}*/
+if(empty($_POST['Username'])){
+    }      
+    else {$username = $_POST['Username'];
+$collection->update(array("_id"=>$check), array('$set'=>array("Username"=>$username))); 
+}
+if(empty($_POST['Firstname'])){
+    }      
+    else {$firstname = $_POST['Firstname'];
+$collection->update(array("_id"=>$check), array('$set'=>array("Firstname"=>$firstname)));
+}
+if(empty($_POST['Lastname'])){
+    }      
+    else {$lastname = $_POST['Lastname'];
+$collection->update(array("_id"=>$check), array('$set'=>array("Lastname"=>$lastname)));
+}
+if(empty($_POST['email'])){
+    }      
+    else {$email = $_POST['email'];
+$collection->update(array("_id"=>$check), array('$set'=>array("E-mail"=>$email)));
+}
+
+if(empty($_POST['Password'])){
+    }      
+    else {$password = $_POST['Password'];
+$collection->update(array("_id"=>$check), array('$set'=>array("Password"=>$password)));
+}
+header('location:../profile.php');
+?>

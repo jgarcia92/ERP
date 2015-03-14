@@ -1,0 +1,13 @@
+h1,h2,p
+{
+color:red;
+}
+html
+{
+ background: url(../images/background.jpg) no-repeat center center fixed; 
+  background-size: cover;
+}
+body{ background: url(../images/background2.jpg) no-repeat center center fixed; 
+  background-size: cover;}
+h1{float:center;text-align:center;}
+#login{float:center;text-align:center;}

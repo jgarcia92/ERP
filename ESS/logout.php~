@@ -1,0 +1,12 @@
+<?php
+SESSION_START();
+SESSION_DESTROY();
+echo"You've have signd out successfullly";
+<script type="text/javascript">
+					<!--
+
+					window.location = "index.php"
+                                        
+					//-->
+					</script>
+?>

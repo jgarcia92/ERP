@@ -1,0 +1,29 @@
+<html>
+<title>Customer Login</title>
+<body>
+<form>
+<fieldset>
+<legend align="center">Customer Login</legend>
+<table>
+<tr><td>Username</td><td><input type="text" maxlength="15" required="required"/></td>
+</tr>
+<tr>
+<td>Password</td>
+<td><input type="password"  required="required"/></td>
+</tr>
+<tr>
+<td><input type="checkbox">Keep me logged in
+</td>
+<td><button type="button">Forgot Password!
+</td>
+</tr>
+<tr>
+<td>
+<input type="button" value="Login" onclick="parent.window.opener.location='customer.php'; window.close();">    
+</td>
+</tr>
+
+</fieldset>
+
+</form>
+</body> 

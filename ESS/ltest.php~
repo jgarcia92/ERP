@@ -1,0 +1,41 @@
+<?php 
+$postedUsername = $_POST['username']; //Gets the posted username, put's it into a variable.
+			$postedPassword = $_POST['password']; //Gets the posted password, put's it into a variable.
+//echo $postedUsername;
+//echo $postedPassword;
+   // connect to mongodb
+   $m = new MongoClient();
+  // echo "Connection to database successfully";
+   // select a database
+   $db = $m->db_ess;
+   //echo "Database mydb selected";
+   $collection = $db->ess_customer_info;
+   //echo "Collection selected succsessfully";
+   $cursor = $collection->find();
+   // iterate cursor to display title of documents
+   foreach ($cursor as $document) {
+      if($postedUsername==$document["user_id"])
+{
+if($postedPassword==$document["password"])
+{
+
+echo'login successful';?>
+<script type="text/javascript">
+					<!--
+					window.location = "index.php"
+                                        window.close();
+					//-->
+					</script>
+<?php
+}
+}
+   }
+				
+?>
+<html>
+<script type="text/javascript">
+					<!--
+					window.location = "eltest.php"
+					//-->
+					</script>
+</html>

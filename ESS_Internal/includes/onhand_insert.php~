@@ -1,0 +1,13 @@
+<?php
+$item_id=$_POST['item_id'];
+$org_id=$_POST['org_id'];
+$moq=$_POST['moq'];
+//connect to mongodb
+$m = new MongoClient();
+//select a database
+$db = $m->db_ess;
+$collection = $db->ess_onhand;
+$document = array("item_id"=>$item_id,"org_id"=>$ord_id,"material_on_quantity"=>$moq);
+$collection->insert($document);
+}
+?>

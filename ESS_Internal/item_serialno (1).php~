@@ -1,0 +1,93 @@
+<html>
+<head>
+<title> item serial number</title>
+<h2 align='center'> Item serial number table</h2>
+<body>
+<form action="includes/item_serial_no.php" method="POST">
+<table align='center' border="2" bgcolor="#efefef">
+<tr>
+<th width="150">trans_id</th>
+<th width="150">item_id</th>
+<th width="150">org_id</th>
+<th width="150">serial_no</th>
+<th width="150">status</th>
+</tr>
+<tr>
+<td><select name="trans_id">
+<?php 
+// connect to mongodb
+   $m = new MongoClient();
+   // select a database\
+   $db = $m->db_ess;
+   $collection = $db->ess_custtrans_info;
+   $cursor=$collection->find();
+   foreach($cursor as $document)
+{
+echo'<option value="'.$document[""].'">'. $document[""].'</option>';
+}  
+?>
+</td>
+<td><select name="item_id">
+<?php 
+// connect to mongodb
+   $m = new MongoClient();
+   // select a database\
+   $db = $m->db_ess;
+   $collection = $db->ess_item_info;
+   $cursor=$collection->find();
+   foreach($cursor as $document)
+{
+echo'<option value="'.$document["_id"].'">'. $document["_id"].'</option>';
+}  
+?>
+</td>
+<td><select name="org_id">
+<?php 
+// connect to mongodb
+   $m = new MongoClient();
+   // select a database\
+   $db = $m->db_ess;
+   $collection = $db->ess_organisation;
+   $cursor=$collection->find();
+   foreach($cursor as $document)
+{
+echo'<option value="'.$document["_id"].'">'. $document["_id"].'</option>';
+}  
+?>
+<td><select name="serial_no">
+<?php 
+// connect to mongodb
+   $m = new MongoClient();
+   // select a database\
+   $db = $m->db_ess;
+   $collection = $db->ess_;
+   $cursor=$collection->find();
+   foreach($cursor as $document)
+{
+echo'<option value="'.$document["_id"].'">'. $document["_id"].'</option>';
+}  
+?>
+<td><input type='radio' name="status">yes<input type='radio' name="status">no</td>
+</tr>
+<td><input type="submit"></td>
+</table>
+</form>
+</body>
+</head>
+</html>
+<?php
+{
+$trans_id=$_POST['trans_id'];
+$item_id=$_POST['item_id'];
+$org_id=$_POST['org_id'];
+$serial_no=$_POST['serial_no'];
+$status=$_POST['status'];
+//connect to mongodb
+$m = new MongoClient();
+//select a database
+$db = $m->db_ess;
+$collection = $db->ess_serialnumber;
+$document = array("trans_id"=>$trans_id,"item_id"=>$item_id,"org_id"=>$org_id,"serial_no"=>$serial_no,"status"=>$status);
+$collection->insert($document);
+}
+?>

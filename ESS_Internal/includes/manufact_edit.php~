@@ -1,0 +1,15 @@
+<?php
+$name=$_POST['Name'];
+$location_change=$_POST['location'];
+   $m = new MongoClient();
+   // select a database
+   $db = $m->db_ess;
+   $collection = $db->ess_manufacturer;
+$cursor=$collection->find(array('Name'=>$name));
+echo $cursor->count();
+foreach($cursor as $document)
+{
+$collection->update(array("_id"=>new MongoId($document['_id'])), array('$set'=>array("location"=>$location_change)));
+}
+header("location:category.php");
+?>

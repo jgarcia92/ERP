@@ -1,0 +1,35 @@
+<html>
+<title>Update</title>
+<link rel="stylesheet" type="text/css" href="css/styles2.css">
+<body>
+<form action='includes/update.php' method='post'>
+<table align="center">
+First Name: </td><td><input type="text" required="required" name="fname" placeholder="First Name" title="Your First Name">
+</td>
+</tr>
+<br>
+<tr>
+<td>Last Name: </td><td><input type="text" name="lname" required="required" placeholder="Last Name" title="Your Last Name">
+</td>
+</tr>
+<tr>
+<td>Mobile No: </td><td><input type="tel" name="mnumber" required="required" placeholder="Mobile No." title="Give your mobile number">
+<br>
+<tr>
+<td>STD Number: </td><td><input type="number" name="stdnumber"  placeholder="STD Code" title="STD Number">
+</tr>
+<tr>
+<td>Telephone No: </td><td><input type="tel" name="tnumber" placeholder="Telephone No." title="Give your landline number">
+</tr>
+<td>User Name: </td><td><input type="text" name="uname" required="required" placeholder="User Name" title="Provide an User Name"></td>
+</tr>
+<tr>
+<td>Password:</td><td><input type="password" name="password" required="required" placeholder="**********" title="Provide a password"></td>
+</tr>
+<tr>
+<td><input type="submit"></td>
+</tr>
+</table>
+</form>
+</body>
+</html>

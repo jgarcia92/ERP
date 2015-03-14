@@ -1,0 +1,23 @@
+<?php
+session_start();
+$m = new MongoClient();
+$db=$m->db_ess;
+//echo $_SESSION['ids'];
+//echo $_SESSION['price'];
+$collection=$db->ess_temp_trans;
+$cursor=$collection->find(array('customer_id'=>$_SESSION['user']));
+
+$count=$cursor->count();
+if($cursor->count()==0)
+{$count+=1;
+}$document = array( 
+"order_id"=>$count,      
+"item_id"=>$_SESSION['ids'],
+      "price"=>$_SESSION['price'],
+	"customer_id"=>$_SESSION['user']
+);
+   $collection->insert($document);
+unset($_SESSION['ids']);
+unset($_SESSION['price']);
+header("location:profile.php");
+?>

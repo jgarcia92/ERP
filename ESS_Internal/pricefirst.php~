@@ -1,0 +1,67 @@
+<?php
+
+$m = new MongoClient();
+  // echo "Connection to database successfully";
+   // select a database
+   $db = $m->db_ess;
+   //echo "Database mydb selected";
+   $collection = $db->ess_pricing_info;
+   //echo "Collection selected succsessfully";
+  $cursor=$collection->find(array("Price_List_Name"=>$_POST['query'])); 
+foreach($cursor as $document)
+{
+$cat=$document['Category'];
+$brand=$document['Brand'];
+$model_number=$document['Model_number'];
+}  
+?>
+<html>
+<head>
+<script>
+function test() {
+    var x=document.getElementById("catname");
+}
+</script>
+</head>
+<title>Pricing</title>
+<body>
+<h2 align="center">Update Pricing</h2>
+<form action='includes/pricingupdate.php' method='post'>
+<table align="center">
+<br>
+<br>
+<br>
+
+</table>
+<hr>
+<hr>
+<table border='2' align="center">
+<tr>
+
+<th>Category</th>
+<th>Brand</th>
+<th>Model Number</th>
+<th>Unit Of Measurement</th>
+<th>New Price</th>
+<th>New Discount</th>
+<th>Hot Buy Flag</th>
+</tr>
+<tr>
+<td><input type="text" name="category" value="<?php echo$cat?>">
+<td> <input type="text" name="catname" value="<?php echo$brand?>"> 
+<td> <input type="text" name="model_num" id="model_num" value="<?php echo$model_number?>">
+</td>
+<td><input type="text" name="UOM" value="each"></td>
+<td><input type="text" name="price" required="required" placeholder="Price" title="Enter the price in Rupees"></td>
+<td><input type="text" name="discount" required="required" placeholder="Discount" title="Provide Discount in %"></td>
+<td><input type="radio" name="hbf" value="Yes">Yes
+<input type="radio" name="hbf" value="No">No</td>
+</tr>
+<td><br><input type="submit"></td><td><input type="reset"></td>
+</table>
+
+</tr>
+
+</form>
+</body>
+</html>

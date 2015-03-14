@@ -1,0 +1,59 @@
+<html>
+<title>Product_Manager</title>
+<body>
+<h2 align="center">PRODUCT MANAGER INTERNAL FORM</h2>
+<form action='' method='post'>
+<table align="center">
+<br>
+<tr>
+<td>
+Category: </td><td><select name="cars">
+<option value="TV">TV</option>
+<option value="Laptop">Laptop</option>
+<option value="Tablets">Tablets</option>
+<option value="Mobile">Mobile</option>
+<option value="Camera">Camera</option>
+<option value="Audio and Video">Audio and Video</option>
+<option value="audi">Gmaing Consoles</option>
+<option value="Mobile Accessories">Mobile Accessories</option>
+<option value="Laptop Accessories">Laptop Accessories</option>
+<option value="Softwares">Softwares</option>
+</select>
+</td>
+</tr>
+<br>
+<tr>
+<td>Model Number: </td><td><input type="Text" name="Model_Number" required="required" placeholder="Model Number" title="Provide Model Number">
+</td>
+</tr>
+<tr>
+<td>Brand: </td><td><input type="text" name="bBrand" required="required" placeholder="Brand" title="Brand Of Product">
+</td>
+</tr>
+<tr>
+<td>Color: </td><td><input type="text" name="cColor" required="required" placeholder="Color" title="Color of Product">
+<br>
+<tr>
+<td>Serial Number: </td><td><input type="text" name="sSerialnum"  placeholder="Text" title="Serial Number of Product">
+</tr>
+<tr>
+<td>Item Status:</td><td><select name="Item_status">
+<option value="Active">Active</option>
+<option value="End of life">End of life</option>
+</select>
+</tr>
+<tr>
+<td>Primary Unit Of Measurement:</td><td><input type="PMU" name="PMU" required="required" placeholder="Primary Unit Of Measurement" title="Give Primary Unit Of Measurement"></td>
+</tr>
+<tr>
+<td>Description: </td><td><textarea rows="10" cols="30" name="dDescription" placeholder="Description" title="Detailed Description"></textarea></td>
+</tr>
+<br>
+<tr>
+<td><input type="submit"></td><td><input type="reset"><td>
+</tr>
+</table>
+
+</form>
+</body>
+</html>
